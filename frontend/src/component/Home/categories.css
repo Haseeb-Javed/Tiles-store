@@ -1,0 +1,85 @@
+.maincontent {
+    display: flex;
+    margin: 2vmax auto;
+    /* width: 80vw; */
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100%;
+    background-color: #F1F1F1;
+  }
+  
+  .Card {
+    width: 25vmax;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: rgb(48, 48, 48);
+    margin: 0.7vmax;
+    transition: all 0.5s;
+    padding-bottom: 0.5vmax;
+  }
+  
+  .Card > img {
+    width: 25vmax;
+  }
+  
+  .Card > div {
+    margin: 0.5vmax;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .Card .content {
+    position: absolute;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    text-align: center;
+    
+  }
+  .content .title {
+    font-size: 26px;
+    margin: -60px 25px 40px 0px;
+    text-align: right;
+    font-weight: 600;
+    color: rgba(20, 233, 222, 0.979);
+    /* background-color: rgba(0, 0, 0, 0.4); */
+    /* padding: 0px 30px 0px 0px; */
+  }
+  
+  .containers:hover {
+    transition: all 0.5s;
+    box-shadow: 0 0 5px rgba(15, 15, 15, 0.26);
+  
+    transform: translateY(-1vmax);
+  }
+  
+  
+  
+  /* .Card:hover {
+    box-shadow: 0 0 5px rgba(15, 15, 15, 0.26);
+  
+    transform: translateY(-1vmax);
+  } */
+  
+  @media screen and (max-width: 600px) {
+    .Card > p {
+      font-size: 1.7vmax;
+    }
+  
+    .Card > div {
+      margin: 0vmax;
+      display: block;
+    }
+  
+    .Card > span {
+      font-size: 1.5vmax;
+    }
+  
+    .Card > div > span {
+      margin: 0 0.5vmax;
+      font: 300 1vmax "Roboto";
+    }
+  }
+  
