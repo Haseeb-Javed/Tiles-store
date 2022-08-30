@@ -81,5 +81,9 @@
       margin: 0 0.5vmax;
       font: 300 1vmax "Roboto";
     }
+    .content .title{
+      font-size: 15px;
+      margin: -30px 15px 40px 0px;
+    }
   }
   
