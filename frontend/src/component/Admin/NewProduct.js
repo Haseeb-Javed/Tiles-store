@@ -26,6 +26,8 @@ const NewProduct = ({ history }) => {
   const [Stock, setStock] = useState(0);
   const [images, setImages] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
+  const [length, setLength] = useState(0);
+  const [width, setWidth] = useState(0);
 
   const categories = [
     "floor tiles",
@@ -57,6 +59,8 @@ const NewProduct = ({ history }) => {
 
     myForm.set("name", name);
     myForm.set("price", price);
+    myForm.set("length", length);
+    myForm.set("width", width);
     myForm.set("description", description);
     myForm.set("category", category);
     myForm.set("Stock", Stock);
@@ -119,6 +123,21 @@ const NewProduct = ({ history }) => {
                 onChange={(e) => setPrice(e.target.value)}
               />
             </div>
+            <div>
+              <input
+                type="number"
+                placeholder="Length"
+                required
+                onChange={(e) => setLength(e.target.value)}
+              />
+              <input 
+                type="number"
+                placeholder="Width"
+                required
+                onChange={(e) => setWidth(e.target.value)}
+              />
+            </div>
+            
 
             <div>
               <DescriptionIcon />

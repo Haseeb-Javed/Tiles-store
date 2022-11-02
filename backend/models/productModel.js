@@ -31,6 +31,15 @@ const productSchema = mongoose.Schema({
       },
     },
   ],
+  length: {
+    type: Number,
+    default: 0,
+  },
+  width: {
+    type: Number,
+    default: 0,
+  },
+
   category: {
     type: String,
     required: [true, "Please Enter Product Category"],

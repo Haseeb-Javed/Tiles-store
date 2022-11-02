@@ -36,15 +36,17 @@ const UpdateProduct = ({ history, match }) => {
   const [images, setImages] = useState([]);
   const [oldImages, setOldImages] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
+  const [length, setLength] = useState(0);
+  const [width, setWidth] = useState(0);
 
   const categories = [
-    "Laptop",
-    "Footwear",
-    "Bottom",
-    "Tops",
-    "Attire",
-    "Camera",
-    "SmartPhones",
+    "floor tiles",
+  "bathroom tiles",
+  "kitchen tiles",
+  "outdoor paving slabs",
+  "wood effect tiles",
+  "luxury vinyl",
+  "real wood",
   ];
 
   const productId = match.params.id;
@@ -54,6 +56,8 @@ const UpdateProduct = ({ history, match }) => {
       dispatch(getProductDetails(productId));
     } else {
       setName(product.name);
+      setLength(product.length);
+      setWidth(product.width);
       setDescription(product.description);
       setPrice(product.price);
       setCategory(product.category);
@@ -93,6 +97,8 @@ const UpdateProduct = ({ history, match }) => {
 
     myForm.set("name", name);
     myForm.set("price", price);
+    myForm.set("length", length);
+    myForm.set("width", width);
     myForm.set("description", description);
     myForm.set("category", category);
     myForm.set("Stock", Stock);
@@ -155,6 +161,22 @@ const UpdateProduct = ({ history, match }) => {
                 required
                 onChange={(e) => setPrice(e.target.value)}
                 value={price}
+              />
+            </div>
+            <div>
+              <input
+                type="number"
+                placeholder="Length"
+                required
+                onChange={(e) => setLength(e.target.value)}
+                value={length}
+              />
+              <input 
+                type="number"
+                placeholder="Width"
+                required
+                onChange={(e) => setWidth(e.target.value)}
+                value={width}
               />
             </div>
 
@@ -224,7 +246,7 @@ const UpdateProduct = ({ history, match }) => {
               type="submit"
               disabled={loading ? true : false}
             >
-              Create
+              Update
             </Button>
           </form>
         </div>

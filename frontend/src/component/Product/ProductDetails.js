@@ -46,6 +46,8 @@ const ProductDetails = ({ match }) => {
   const [open, setOpen] = useState(false);
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
+  const [totalArea, setTotalArea] = useState("");
+  const [requiredTiles, setRequiredTiles] = useState("");
 
   const increaseQuantity = () => {
     if (product.Stock <= quantity) return;
@@ -99,6 +101,15 @@ const ProductDetails = ({ match }) => {
     }
     dispatch(getProductDetails(match.params.id));
   }, [dispatch, match.params.id, error, alert, reviewError, success]);
+  let tileAreaInSq;
+
+
+  let calculateTiles = (event) => {
+    event.preventDefault();
+    tileAreaInSq = ((product.length/25.4) * (product.width/25.4))/144;
+    setRequiredTiles(Math.round(totalArea / tileAreaInSq)+1); 
+
+  };
 
   return (
     <Fragment>
@@ -126,6 +137,7 @@ const ProductDetails = ({ match }) => {
               <div className="detailsBlock-1">
                 <h2>{product.name}</h2>
                 <p>Product # {product._id}</p>
+                <h4>Size: {product.length}mm x {product.width}mm </h4>
               </div>
               <div className="detailsBlock-2">
                 <Rating {...options} />
@@ -135,7 +147,19 @@ const ProductDetails = ({ match }) => {
                 </span>
               </div>
               <div className="detailsBlock-3">
-                <h1>{`RS${product.price}`}</h1>
+                <h1>{`RS: ${product.price}`} m<sup>2</sup></h1>
+                <form className="tile-calculate" onSubmit={calculateTiles}>
+                
+                <input
+                name="name"
+                placeholder="Area (sq ft)"
+                onChange={(e) => setTotalArea(e.target.value)}
+              />
+              <button className="loginBtn" type="submit">
+              Calculate{" "}
+            </button>
+              <h2> {requiredTiles} </h2>
+              </form>
                 <div className="detailsBlock-3-1">
                   <div className="detailsBlock-3-1-1">
                     <button onClick={decreaseQuantity}>-</button>
