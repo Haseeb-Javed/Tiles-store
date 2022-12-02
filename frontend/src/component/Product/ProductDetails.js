@@ -189,12 +189,10 @@ const ProductDetails = ({ match }) => {
               <button onClick={submitReviewToggle} className="submitReview">
                 Submit Review
               </button>
-              <a href="https://impactivecreator.com" target="_blank">
-                <button className="visualizerButton">
+              <a href="https://tilesview.ai/app/login.php?login_backend=NDMzMzl0aWxlc3ByZXZpZXdfMTk5NA==" target="_blank"> <button className="visualizerButton">
                   <FaEye className="svg_icons" /> VIEW IN YOUR HOME OR SAMPLE
                   ROOM
-                </button>
-              </a>
+                </button> </a>
             </div>
           </div>
 

@@ -53,57 +53,7 @@ const Calculator = () => {
   };
 
   return (
-    // <div className='main-container'>
-    //     <div className='area-calculate'>
-    //         <h2 className='center'>Area calculator</h2>
-    //         <form onSubmit={calculateArea}>
-    //             <div>
-    //             <label>Length (m)</label>
-    //             <input value={length} onChange={(e)=> setLength(e.target.value)}/>
-    //             </div>
-    //             <div>
-    //             <label>Width (m)</label>
-    //             <input value={width} onChange={(e)=> setWidth(e.target.value)}/>
-    //             </div>
-
-    //             <div>
-    //                 <button className='btn' type='submit'>calculate </button>
-    //             </div>
-    //         </form>
-
-    //         <div className='center'></div>
-    //         <h3> Area (meter square): {area}</h3>
-
-    //     </div>
-
-    //     <div className='tiles-calculate'>
-
-    //     </div>
-
-    //     {/* tiles calculator */}
-
-    //     <div className='tiles-calculate'>
-    //         <h2 className='center'>Tiles calculator</h2>
-    //         <form onSubmit={calculateTiles}>
-    //             <div>
-    //             <label>Area (m2)</label>
-    //             <input value={totalArea} onChange={(e)=> setTotalArea(e.target.value)}/>
-    //             </div>
-    //             <div>
-    //                 <button className='btn' type='submit'>calculate </button>
-    //             </div>
-    //         </form>
-
-    //         <div className='center'></div>
-    //         <h3> Required TIles: {totalArea * 2}</h3>
-
-    //     </div>
-
-    //     <div className='tiles-calculate'>
-
-    //     </div>
-
-    //     </div>
+    
 
     <Fragment>
       <div className="LoginSignUpContainer">
